@@ -116,6 +116,7 @@ undetected-chromedriver==2.1.1
 uritemplate==4.1.1
 urllib3==1.26.12
 varname==0.10.0
+versioneer==0.28
 wcwidth==0.2.5
 webencodings==0.5.1
 websockets==9.1
