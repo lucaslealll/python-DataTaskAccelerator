@@ -133,3 +133,7 @@ def check_file_exists(
             current_time = int((datetime.now()).strftime("%H%M%S"))
             if fully_downloaded_file == False and current_time >= stop_time:
                 return fully_downloaded_file
+
+
+def get_current_script_name():
+    return str(os.path.basename(__file__))

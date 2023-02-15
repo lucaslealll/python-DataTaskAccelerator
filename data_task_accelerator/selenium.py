@@ -6,6 +6,10 @@ dta.selenium
 import glob
 import pickle
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 
 def import_cookies(path, filename, webdriver_browser):
     """Import cookies to browser.
@@ -32,3 +36,15 @@ def import_cookies(path, filename, webdriver_browser):
     for cookie in file:
         webdriver_browser.add_cookie(cookie)
     return webdriver_browser
+
+
+def get_number_of_elements(container):
+    element = int(
+        len(
+            container.find_elements(
+                By.CLASS_NAME,
+                "tiktok-16r0vzi-DivCommentItemContainer",
+            )
+        )
+    )
+    return element
