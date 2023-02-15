@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnType": true,
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120,
+        "editor.wrappingIndent": "none"
+    },
+    "python.analysis.extraPaths": [],
+    "python.autoComplete.extraPaths": [],
+    "python.condaPath": "",
+    "python.experiments.optInto": [],
+    "settingsSync.ignoredSettings": ["-python.sortImports.path"]
+}
