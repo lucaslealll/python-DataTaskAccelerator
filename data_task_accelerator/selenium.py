@@ -43,7 +43,7 @@ def get_number_of_elements(container):
         len(
             container.find_elements(
                 By.CLASS_NAME,
-                "tiktok-16r0vzi-DivCommentItemContainer",
+                "",
             )
         )
     )
