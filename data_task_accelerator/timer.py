@@ -19,9 +19,8 @@ def get_time_now(format="%d %b,%Y %H:%M:%S") -> str:
     >>> date = get_time_now("%H:%M")
     '15:35'
     """
-    is_str = isinstance(format, str)
-    if type(is_str) == True:
-        raise ValueError("Value is invalid. Use string to specify the output format")
+    if not isinstance(format, str):
+        raise TypeError("Value is invalid. Use string to specify the output format")
 
     return datetime.now().strftime(format)
 
@@ -36,9 +35,8 @@ def pls_wait(sec=1) -> None:
     |██████____|100% 6/10s [08 Feb,2023 10:19:49<10:19:59]
     """
     # Validate time value
-    is_integer = isinstance(sec, int)
-    if type(is_integer) == True:
-        raise ValueError("Time value is invalid. Use integer value to specify seconds")
+    if not isinstance(sec, int):
+        raise TypeError("Time value is invalid. Use integer value to specify seconds")
 
     start_datetime = get_time_now()
 
