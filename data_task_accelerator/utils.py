@@ -12,9 +12,9 @@ from time import sleep
 
 from cairo import Path
 
-RNM_STR_PREFIX = ("RENAME").ljust(11)
-RM_STR_PREFIX = ("REMOVE").ljust(11)
 E_STR_PREFIX = ("EXTRACT").ljust(11)
+RM_STR_PREFIX = ("REMOVE").ljust(11)
+RNM_STR_PREFIX = ("RENAME").ljust(11)
 T_STR_PREFIX = ("TRANSFORM").ljust(11)
 
 
@@ -42,7 +42,7 @@ def rename_file(
     path=DEFAULT_FILE_DIR_PATH,
     filename=DEFAULT_FILENAME,
     new_filename=DEFAULT_NEW_FILENAME,
-):
+) -> None:
     """Rename a file.
 
     Parameters
@@ -63,7 +63,7 @@ def rename_file(
     return None
 
 
-def delete_file(path=DEFAULT_FILE_DIR_PATH, filename=DEFAULT_FILENAME):
+def delete_file(path=DEFAULT_FILE_DIR_PATH, filename=DEFAULT_FILENAME) -> None:
     """Delete a file.
 
     Parameters
@@ -86,7 +86,7 @@ def check_file_exists(
     filename=DEFAULT_FILENAME,
     min_file_size=1,
     timeout=15,
-):
+) -> bool:
     """Checks the existence of a file, returning True or False.
 
     Parameters
@@ -135,5 +135,49 @@ def check_file_exists(
                 return fully_downloaded_file
 
 
-def get_current_script_name():
+def get_current_script_name() -> str:
     return str(os.path.basename(__file__))
+
+
+"""
+lista_de_listas = [
+    list_comments_content,
+    list_likes_content,
+    list_reach,
+    list_shares,
+    list_views,
+]
+
+for lista in lista_de_listas:
+    lista = lista
+    print(f"{lista}")
+i = 0
+for lista in lista_de_listas:
+    lista_final = lista
+
+    item_da_aux_list = []
+    final_metrics_list = []
+
+    for valor in lista:
+        valor = valor.replace(",", "")
+        valor = valor.replace("--", "0")
+        valor = valor.split(" ")[0]
+
+        if "K" in valor:
+            valor = valor.replace("K", "")
+            valor = float(valor) * 1000
+        else:
+            if "M" in valor:
+                valor = valor.replace("M", "")
+                valor = float(valor) * 1000000
+
+        item_da_aux_list.append(float(valor))
+        lista_final = item_da_aux_list
+
+    lista_de_listas[i] = lista_final
+
+i = i + 1
+for i in lista_de_listas:
+    a = i
+    print(a)
+"""
