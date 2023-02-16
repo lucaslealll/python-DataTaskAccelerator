@@ -4,7 +4,7 @@ from datetime import datetime
 from time import sleep
 
 
-def get_time_now(format="%d %b,%Y %H:%M:%S") -> str:
+def get_time_now(format: str = "%d %b,%Y %H:%M:%S") -> str:
     """Return the day, month, year, hour, minute and seconds.
 
     By default:
@@ -25,7 +25,7 @@ def get_time_now(format="%d %b,%Y %H:%M:%S") -> str:
     return datetime.now().strftime(format)
 
 
-def pls_wait(sec=1) -> None:
+def pls_wait(sec: int = 1) -> None:
     """Shows a progress bar while waiting x seconds.
 
     By default:
