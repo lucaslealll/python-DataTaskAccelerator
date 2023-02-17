@@ -5,8 +5,8 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/data-task-accelerator?period=month&units=international_system&left_color=black&right_color=orange&left_text=PyPI%20downloads%20per%20month)](https://pepy.tech/project/data-task-accelerator)
 -->
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Code style: black](https://img.shields.io/badge/%20Code%20Style-Black-%23484B6D?style=flat&labelColor=23c4be)](https://github.com/psf/black)
+[![Imports : isort](https://img.shields.io/badge/%20Imports-isort-%23484B6D?style=flat&labelColor=23c4be)](https://pycqa.github.io/isort/)
 
 This library simplifies working with data through a cluster of functions that accelerate developer productivity. Whether in the fields of data processing, process automation, database management, among others.
 
