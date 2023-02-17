@@ -4,14 +4,14 @@ from datetime import datetime
 from time import sleep
 
 
-def get_time_now(format: str = "%d %b,%Y %H:%M:%S") -> str:
+def get_time_now(format: str = "%a %d %b %Y %X") -> str:
     """Return the day, month, year, hour, minute and seconds.
 
     By default:
-        - strftime : %d %b,%Y %H:%M:%Su
+        - `format` : %a %d %b %Y %X
 
     >>> date = get_time_now()
-    '15 Feb,2023 15:28:48'
+    'Thu 16 Feb 2023 21:18:42'
 
     >>> date = get_time_now("%D")
     '02/15/23'
@@ -32,7 +32,7 @@ def pls_wait(sec: int = 1) -> None:
         - sec : 1
 
     >>> waiting(5)
-    |██████____|100% 6/10s [08 Feb,2023 10:19:49<10:19:59]
+    [######]    [6/6s]    [16 Feb,2023 21:05:12<16 Feb,2023 21:05:18]
     """
     # Validate time value
     if not isinstance(sec, int):
@@ -44,7 +44,7 @@ def pls_wait(sec: int = 1) -> None:
         percent = int((i * 100) / sec)
         current_datetime = get_time_now()
         print(
-            f"|{'█' * i}{'_' * (sec-i)}|{percent}% {i}/{sec}s [{start_datetime}<{current_datetime}]",
+            f"[{'#' * i}{'.' * (sec-i)}]    [{i}/{sec}s]    [{start_datetime}<{current_datetime}]",
             end="\r",
             flush=True,
         )
