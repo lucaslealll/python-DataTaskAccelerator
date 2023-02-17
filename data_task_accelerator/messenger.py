@@ -10,15 +10,14 @@ DEFAUTL_SMTP_HOST = "smtp.gmail.com"
 
 
 def send_email(
-    receiver,
-    sender_email,
-    sender_auth,
-    abstract="",
-    content="",
-    subject="",
-    smtp_port="587",
-    smtp_host="smtp.gmail.com",
-):
+    from_addr: str,
+    from_psswd: str,
+    to_addr: str | list,
+    msg_body: str = "",
+    msg_subject: str = "",
+    smtp_host: str = DEFAUTL_SMTP_HOST,
+    smtp_port: str = DEFAULT_SMTP_PORT,
+) -> None:
     """Send an email if the .
 
     Parameters
@@ -36,79 +35,28 @@ def send_email(
 
     Examples
     --------
-    >>> send_email(client=CLIENT,project=PROJECT,script=SCRIPT,date=JOBDATE,abstract=str(repr(Exception)),error_log=str(format_exc()))
-    """
-    msg = email.message.Message()
-    msg["Abstract"] = abstract
-    msg["Subject"] = subject
-    msg.add_header("Content-Type", "text/html")
-    msg.set_payload(content)
-
-    sender_email = smtplib.SMTP(f"{smtp_host}:{smtp_port}")
-    sender_email.starttls()
-
-    # Login Credentials for sending the mail
-    sender_email.login(sender_email, sender_auth)
-    sender_email.sendmail(
-        sender_email,
-        receiver,
-        msg.as_string().encode("utf-8"),
+    >>> send_email(
+    from_addr="jack_saur@gmail.com",
+    from_psswd="dshrnliru83no10d",
+    to_addr="daniels_raptor@gmail.com",
+    msg_subject="Lorem",
+    msg_body="Lorem ipsum dolor sit amet...",
     )
-    return None
-
-
-def send_alert_email(
-    client,
-    project,
-    script,
-    datetime,
-    error_log,
-    receiver,
-    sender_email,
-    sender_auth,
-    content="",
-    abstract="",
-    subject="",
-    smtp_port="587",
-    smtp_host="smtp.gmail.com",
-):
-    """Send an alert email if the ETL script goes wrong.
-
-    Parameters
-    ----------
-    `client` : Client name
-    `project` : Project
-    `abstract` : Type of error
-    `datetime` : Date and hour that occurs
-    `error_log` : Error log output
-
-    Examples
-    --------
-    >>> send_alert_email(client=CLIENT,project=PROJECT,script=SCRIPT,date=JOBDATE,abstract=str(repr(Exception)),error_log=str(format_exc()))
-    """
-    subject = f"Error - {client}, {project}, {script}"
-    content = f"""
-        <b>Script `{script}` execution error for client {client}, project {project}</b>
-        <p>{datetime}</p>
-        <h4>Error log below:</h4>
-        <code>[{script}] {abstract}</code>
-        <br>
-        <br>
-        <code>{error_log}</code>
     """
     msg = email.message.Message()
-    msg["Subject"] = subject
+    # msg["Abstract"] = abstract
+    msg["Subject"] = msg_subject
     msg.add_header("Content-Type", "text/html")
-    msg.set_payload(content)
+    msg.set_payload(msg_body)
 
-    sender_email = smtplib.SMTP(f"{smtp_host}:{smtp_port}")
-    sender_email.starttls()
+    messenger = smtplib.SMTP(f"{smtp_host}:{smtp_port}")
+    messenger.starttls()
 
     # Login Credentials for sending the mail
-    sender_email.login(sender_email, sender_auth)
-    sender_email.sendmail(
-        sender_email,
-        receiver,
+    messenger.login(from_addr, from_psswd)
+    messenger.sendmail(
+        from_addr,
+        to_addr,
         msg.as_string().encode("utf-8"),
     )
     return None
