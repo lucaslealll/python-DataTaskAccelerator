@@ -1,4 +1,4 @@
-# **Data Task Accelerator** <img src="./imgs/dta_logo.png" width="150" align='right'>
+# **Data Task _Accelerator_** <img src="./imgs/dta_logo.png" width="150" align='right'>
 
 <!--
 [![PyPI Latest Release](https://img.shields.io/pypi/v/data-task-accelerator.svg)](https://pypi.org/project/data-task-accelerator)
