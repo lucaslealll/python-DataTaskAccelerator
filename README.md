@@ -1,5 +1,13 @@
 # **Data Task Accelerator** <img src="./imgs/dta_logo.png" width="150" align='right'>
 
+<!--
+[![PyPI Latest Release](https://img.shields.io/pypi/v/data-task-accelerator.svg)](https://pypi.org/project/data-task-accelerator)
+[![Downloads](https://static.pepy.tech/personalized-badge/data-task-accelerator?period=month&units=international_system&left_color=black&right_color=orange&left_text=PyPI%20downloads%20per%20month)](https://pepy.tech/project/data-task-accelerator)
+-->
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
 This library simplifies working with data through a cluster of functions that accelerate developer productivity. Whether in the fields of data processing, process automation, database management, among others.
 
 ## Installing
